@@ -6,15 +6,15 @@ const { useState, useEffect, useCallback, useMemo } = React;
 
 interface Props {
   className?: string;
-  style?: Record<string,any>;
-  children: any;
+  style?: Record<string, any>;
+  children?: any;
 }
 
 interface State {
   [key: string]: any;
 }
 
-export default function {{component.name.capitalizedCamelCase}}({ clsasName, style, children }:Props){
+export default function {{component.name.capitalizedCamelCase}}({ className, style, children }: Props){
   const initialState: State = {};
   const [state, setState] = useState(initialState);
 
