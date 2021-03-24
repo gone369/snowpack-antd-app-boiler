@@ -6,7 +6,6 @@ yarn
 ```
 
 ## Development
-1. 
 ```bash
 yarn dev
 ```
