@@ -5,9 +5,6 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 
-const httpProxy = require('http-proxy');
-const proxy = httpProxy.createServer({ target: 'http://127.0.0.1:8081' });
-
 module.exports = {
   mount: {
     src: '/dist',
@@ -56,15 +53,5 @@ module.exports = {
   alias: {
     '@': './src',
   },
-  routes: [
-    { match: 'routes', src: '.*', dest: '/index.html' },
-    {
-      match: 'all',
-      src: '/api/.*',
-      dest: (req, res) => {
-        req.url = req.url.replace(/^\/api/, '');
-        proxy.web(req, res);
-      },
-    },
-  ],
+  routes: [{ match: 'routes', src: '.*', dest: '/index.html' }],
 };
