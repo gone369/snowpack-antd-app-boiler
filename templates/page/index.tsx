@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import styles from './index.module.less';
 import cn from 'classnames';
-
-const { useState, useEffect, useCallback, useMemo } = React;
 
 interface Props {
   [key: string]: any;

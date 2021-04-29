@@ -5,8 +5,8 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 
-const httpProxy = require('http-proxy');
-const proxy = httpProxy.createServer({ target: 'http://127.0.0.1:8081' });
+//const httpProxy = require('http-proxy');
+//const proxy = httpProxy.createServer({ target: 'http://127.0.0.1:8081' });
 
 module.exports = {
   mount: {
@@ -50,21 +50,29 @@ module.exports = {
     sourcemap: true,
     /* ... */
   },
-  // packageOptions: {
-  //   namedExports: ['antd'],
-  // },
+   packageOptions: {
+     //namedExports: ['antd'],
+     //rollup: {
+      //plugins: [
+        //require('rollup-plugin-less')({
+          //insert: true,
+          //exclude: [],
+        //}),
+      //],
+    //},
+   },
   alias: {
     '@': './src',
   },
   routes: [
     { match: 'routes', src: '.*', dest: '/index.html' },
-    {
-      match: 'all',
-      src: '/api/.*',
-      dest: (req, res) => {
-        req.url = req.url.replace(/^\/api/, '');
-        proxy.web(req, res);
-      },
-    },
+    //{
+      //match: 'all',
+      //src: '/api/.*',
+      //dest: (req, res) => {
+        //req.url = req.url.replace(/^\/api/, '');
+        //proxy.web(req, res);
+      //},
+    //},
   ],
 };
