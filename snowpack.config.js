@@ -7,7 +7,6 @@
 
 //const httpProxy = require('http-proxy');
 //const proxy = httpProxy.createServer({ target: 'http://127.0.0.1:8081' });
-
 module.exports = {
   mount: {
     src: '/dist',
