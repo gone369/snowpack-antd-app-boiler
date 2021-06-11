@@ -13,8 +13,7 @@ interface State {
 }
 
 export default function {{component.name.capitalizedCamelCase}}({ className, style, children }: Props){
-  const initialState: State = {};
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState<State>({});
 
   return (
     <div style={style} className={cn( className, styles.{{ component.name.camelCase }} )}>
