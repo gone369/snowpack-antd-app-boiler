@@ -1,0 +1,32 @@
+.color-type(@property) {
+  &.info {
+    @{property}: var(--info-color);
+  }
+  &.success {
+    @{property}: var(--success-color);
+  }
+  &.warning {
+    @{property}: var(--warning-color);
+  }
+  &.error {
+    @{property}: var(--error-color);
+  }
+}
+
+.spacing(@property) {
+  &-xxs {
+    @{property}: var(--spacing-xss);
+  }
+  &-xs {
+    @{property}: var(--spacing-xs);
+  }
+  &-sm {
+    @{property}: var(--spacing-sm);
+  }
+  &-md {
+    @{property}: var(--spacing-md);
+  }
+  &-lg {
+    @{property}: var(--spacing-lg);
+  }
+}
