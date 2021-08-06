@@ -8,7 +8,7 @@ const createUrlObj = ({ host, port = '80', path = '', protocol = 'http' }) => {
   };
 };
 
-module.exports = {
+export default {
   createUrlObj,
   client: createUrlObj({
     host: '127.0.0.1',
@@ -18,14 +18,14 @@ module.exports = {
     host: '127.0.0.1',
     port: '3001',
   }),
-  auth: {
-    client: createUrlObj({
-      host: '127.0.0.1',
-      port: '3002',
-    }),
-    server: createUrlObj({
-      host: '127.0.0.1',
-      port: '3003',
-    }),
-  },
+  // auth: {
+  //   client: createUrlObj({
+  //     host: '127.0.0.1',
+  //     port: '3002',
+  //   }),
+  //   server: createUrlObj({
+  //     host: '127.0.0.1',
+  //     port: '3003',
+  //   }),
+  // },
 };

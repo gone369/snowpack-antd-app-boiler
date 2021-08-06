@@ -1,6 +1,6 @@
-const serverConfig = require('./server.config.js');
+import serverConfig from '%/server.config';
 
-module.exports = {
+export default {
   proxyConfig: {
     target: `${serverConfig.server.protocol}://${serverConfig.server.host}:${serverConfig.server.port}`,
     ws: true,

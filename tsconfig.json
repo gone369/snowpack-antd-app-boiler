@@ -1,17 +1,22 @@
 {
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
   "compilerOptions": {
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "declaration": false,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "lib": ["dom"],
-    "module": "esnext",
+    "lib": ["dom", "esnext"],
     "moduleResolution": "node",
-    "noEmit": true,
     "noImplicitAny": false,
+    "module": "esnext",
+    "outDir": "dist",
     "removeComments": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -19,8 +24,11 @@
     "strict": true,
     "target": "esnext",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "%/*": ["./common/*"]
     }
   },
-  "include": ["src"]
+  "exclude": ["node_modules", "templates"],
+  "include": ["src", "common"]
 }
+

@@ -1,10 +1,11 @@
-const fallback = require('express-history-api-fallback');
-const express = require('express');
-const path = require('path');
+import fallback from 'express-history-api-fallback';
+import express from 'express';
+import path from 'path';
+
+import serverConfig from '%/server.config';
 
 const app = express();
 const root = path.resolve(__dirname, '../build');
-const serverConfig = require('./server.config.js');
 
 // proxies
 
