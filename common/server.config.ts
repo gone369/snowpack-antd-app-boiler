@@ -1,11 +1,32 @@
-const createUrlObj = ({ host, port = '80', path = '', protocol = 'http' }) => {
+const createUrlObj = ({ host, port = '', path = '', protocol = 'http' }) => {
   return {
     host,
     port,
     path,
     protocol,
-    url: `${protocol}://${host}:${port}${path}`,
+    url: `${protocol}://${host}${port.length > 0 ? `:${port}` : ''}${path}`,
   };
+};
+
+const getHost = () => {
+  if (typeof window === 'undefined') {
+    return '127.0.0.1';
+  } else {
+    return window.location.hostname;
+  }
+};
+
+const server = {
+  development: createUrlObj({
+    host: '127.0.0.1',
+    port: '3001',
+    path: '',
+  }),
+  production: createUrlObj({
+    protocol: 'https',
+    host: getHost(),
+    path: '/api',
+  }),
 };
 
 export default {
@@ -14,18 +35,5 @@ export default {
     host: '127.0.0.1',
     port: '3000',
   }),
-  server: createUrlObj({
-    host: '127.0.0.1',
-    port: '3001',
-  }),
-  // auth: {
-  //   client: createUrlObj({
-  //     host: '127.0.0.1',
-  //     port: '3002',
-  //   }),
-  //   server: createUrlObj({
-  //     host: '127.0.0.1',
-  //     port: '3003',
-  //   }),
-  // },
+  server,
 };
